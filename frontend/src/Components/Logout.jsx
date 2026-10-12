@@ -7,7 +7,7 @@ const Logout = () => {
    const logoutUser = async () => {
 
       const response = await fetch(
-         "http://localhost:8000/api/v1/user/logout",
+         "https://codealpha-teamsync.onrender.com/api/v1/user/logout",
          {
             method: "POST",
             credentials: "include",

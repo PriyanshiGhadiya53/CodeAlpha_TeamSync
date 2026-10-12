@@ -17,7 +17,7 @@ function Register() {
         e.preventDefault();
 
         const res = await fetch(
-            "http://localhost:8000/api/v1/user/register",
+            "https://codealpha-teamsync.onrender.com/api/v1/user/register",
             {
                 method: "POST",
                 headers: {

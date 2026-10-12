@@ -1189,7 +1189,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { FaUserCircle, FaVideo } from "react-icons/fa";
 
 // Connect frontend to Socket.IO backend
-const socket = io("http://localhost:8000", {
+const socket = io("https://codealpha-teamsync.onrender.com", {
    autoConnect: false
 });
 
@@ -1353,7 +1353,7 @@ function App() {
    useEffect(() => {
       const getCurrentUser = async () => {
          try {
-            const response = await fetch("http://localhost:8000/api/v1/user/me", {
+            const response = await fetch("https://codealpha-teamsync.onrender.com/api/v1/user/me", {
                method: "GET",
                credentials: "include",
             });

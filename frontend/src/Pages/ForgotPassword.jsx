@@ -14,7 +14,7 @@ function ForgotPassword() {
         console.log("Forgot password email:", email);
 
         const res = await fetch(
-            "http://localhost:8000/api/v1/user/forgot-password",
+            "https://codealpha-teamsync.onrender.com/api/v1/user/forgot-password",
             {
                 method: "POST",
                 headers: {

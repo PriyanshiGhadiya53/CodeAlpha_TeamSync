@@ -15,7 +15,7 @@ const app = express();
 
 app.use(
     cors({
-        origin: "http://localhost:5173",
+        origin:["teamsync-communication.vercel.app","http://localhost:5173"],
         credentials: true,
     })
 );

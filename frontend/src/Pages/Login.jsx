@@ -15,7 +15,7 @@ function Login() {
         e.preventDefault();
 
         const res = await fetch(
-            "http://localhost:8000/api/v1/user/login",
+            "https://codealpha-teamsync.onrender.com/api/v1/user/login",
             {
                 method: "POST",
                 headers: {

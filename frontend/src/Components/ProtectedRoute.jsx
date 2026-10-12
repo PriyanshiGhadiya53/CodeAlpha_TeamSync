@@ -11,7 +11,7 @@ const ProtectedRoute = ({ children }) => {
 
         const checkUser = async () => {
             const res = await fetch(
-                "http://localhost:8000/api/v1/user/me",
+                "https://codealpha-teamsync.onrender.com/api/v1/user/me",
                 {
                     method: "GET",
                     credentials: "include",

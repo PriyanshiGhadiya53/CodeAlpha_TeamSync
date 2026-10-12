@@ -26,7 +26,7 @@ function ResetPassword() {
     }
 
     const res = await fetch(
-        `http://localhost:8000/api/v1/user/reset-password/${token}`,
+        `https://codealpha-teamsync.onrender.com/api/v1/user/reset-password/${token}`,
         {
             method: "PATCH",
             headers: {

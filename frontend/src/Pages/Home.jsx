@@ -39,7 +39,7 @@ const Home = () => {
     const joinRoom = async () => {
 
         const res = await fetch(
-            "http://localhost:8000/api/v1/room/join",
+            "https://codealpha-teamsync.onrender.com/api/v1/room/join",
             {
                 method: "POST",
                 headers: {
