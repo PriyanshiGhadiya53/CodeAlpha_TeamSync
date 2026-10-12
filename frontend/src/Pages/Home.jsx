@@ -10,7 +10,7 @@ const Home = () => {
     const createRoom = async () => {
 
         const response = await fetch(
-            "http://localhost:8000/api/v1/room/create",
+            "https://codealpha-teamsync.onrender.com/api/v1/room/create",
             {
                 method: "POST",
                 credentials: "include",
