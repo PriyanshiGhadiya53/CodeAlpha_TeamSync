@@ -3,7 +3,7 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import userRouter from "./router/user.routers.js";
 import roomRouter from "./router/room.router.js";
-import { generateAgoraToken } from "./sfuToken.js";
+import agoraRouter from "./router/agora.router.js";
 
 const app = express();
 
@@ -30,7 +30,7 @@ app.use(cookieParser())//cookieparser config
 
 app.use("/api/v1/user",userRouter)
 app.use("/api/v1/room",roomRouter)
-app.get("/api/v1/room/token", generateAgoraToken);
+app.use("/api/v1/agora", agoraRouter);
 
 
 
