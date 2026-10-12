@@ -13,7 +13,7 @@ const device = new Device();
 
 
 // Connect frontend to Socket.IO backend
-const socket = io("http://localhost:8000", {
+const socket = io("https://codealpha-teamsync.onrender.com", {
    autoConnect: false
 });
 
@@ -331,7 +331,7 @@ function App() {
    useEffect(() => {
       const getCurrentUser = async () => {
          const response = await fetch(
-            "http://localhost:8000/api/v1/user/me",
+            "https://codealpha-teamsync.onrender.com/api/v1/user/me",
             {
                method: "GET",
                credentials: "include",
