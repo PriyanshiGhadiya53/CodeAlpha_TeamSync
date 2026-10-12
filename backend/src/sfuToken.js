@@ -1,9 +1,6 @@
-import { RtcTokenBuilder, RtcRole } from "agora-access-token";
+import pkg from "agora-access-token";
+const { RtcTokenBuilder } = pkg;
 
-/**
- * Mediasoup को हटाकर Agora Token generate करने का फंक्शन
- * इससे C++ compilation और 8GB RAM memory error पूरी तरह खत्म हो जाएगी।
- */
 const generateAgoraToken = (req, res) => {
     try {
         const channelName = req.query.channelName || req.body.channelName;
@@ -19,16 +16,14 @@ const generateAgoraToken = (req, res) => {
             return res.status(500).json({ error: "Agora credentials not configured in environment variables" });
         }
 
-        // User ID (0 for random / auto-assigned by Agora)
         const uid = 0; 
-        const role = RtcRole.PUBLISHER;
+        // 1 represents RtcRole.PUBLISHER (Publisher role)
+        const role = 1; 
         
-        // Token expiration time (e.g., 2 hours = 7200 seconds)
         const expirationTimeInSeconds = 7200;
         const currentTimestamp = Math.floor(Date.now() / 1000);
         const privilegeExpiredTs = currentTimestamp + expirationTimeInSeconds;
 
-        // Build the token
         const token = RtcTokenBuilder.buildTokenWithUid(
             appId,
             appCertificate,
