@@ -4,9 +4,12 @@ import { Device } from "mediasoup-client";
 import { useParams } from "react-router-dom";
 import { FaUserCircle, FaVideo, FaMicrophone, FaMicrophoneSlash, FaVideoSlash, FaDesktop, FaPaperPlane } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import AgoraRTC from "agora-rtc-sdk-ng";
 
 // Create mediasoup Device for browser
 const device = new Device();
+
+const agoraClient = AgoraRTC.createClient({ mode: "rtc", codec: "vp8" });
 
 // Connect frontend to Live Render Backend
 const socket = io("https://codealpha-teamsync.onrender.com", {
@@ -22,6 +25,12 @@ function App() {
 
    const [message, setMessage] = useState("");
    const [messages, setMessages] = useState([]);
+
+   // Agora Video / Audio Tracks State
+   const [localAudioTrack, setLocalAudioTrack] = useState(null);
+   const [localVideoTrack, setLocalVideoTrack] = useState(null);
+   const [remoteUsers, setRemoteUsers] = useState([]);
+   const localVideoRef = useRef(null);
    
    const videoRef = useRef(null);
    const remoteStreamsRef = useRef({});
