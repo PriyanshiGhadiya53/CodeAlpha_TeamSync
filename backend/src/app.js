@@ -30,7 +30,7 @@ app.use(cookieParser())//cookieparser config
 
 app.use("/api/v1/user",userRouter)
 app.use("/api/v1/room",roomRouter)
-app.use("/api/v1/agora", agoraRouter);
+app.use("/api/v1/room", agoraRouter);
 
 
 
