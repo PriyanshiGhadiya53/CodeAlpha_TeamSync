@@ -94,7 +94,11 @@ function App() {
       const response = await fetch(
          `${BACKEND_URL}/api/v1/room/token?channelName=${encodeURIComponent(roomId)}`,
          {
-            method: "POST",
+           method: "POST",
+            headers: {
+               "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ channelName: roomId }),
             credentials: "include",
          }
       );

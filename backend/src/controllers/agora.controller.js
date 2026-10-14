@@ -7,7 +7,7 @@ import pkg from "agora-access-token";
 const { RtcTokenBuilder } = pkg;
 
 const generateAgoraToken = asyncHandler(async (req, res) => {
-    const channelName = req.body?.channelName;
+    const channelName = req.body?.channelName || req.query.channelName;
 
     if (!req.user) {
         throw new ApiError(401, "Unauthorized user");
